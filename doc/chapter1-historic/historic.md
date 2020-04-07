@@ -1,2 +1,2 @@
-##L'histoire de Javascript, simplifiée
+## L'histoire de Javascript, simplifiée
 
