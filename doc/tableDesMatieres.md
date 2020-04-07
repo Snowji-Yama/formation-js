@@ -4,7 +4,7 @@ par Clement D. et Pierre C.
 
 
 
-1. [L'histoire de Javascript, simplifiée](doc/chapitre1-historique/historique.md)
+1. [L'histoire de Javascript, simplifiée](chapitre1-historique/historique.md)
 2. Le langage et ses concepts
 3. Les modules
 4. Le tooling pour le JS
