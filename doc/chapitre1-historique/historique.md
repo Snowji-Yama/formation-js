@@ -3,7 +3,7 @@
 
 ### La Création
 
-**Javascript** a été crée en 1995 par Netscape (et en particulier par Brendan Eich). Ce langage était 
+**Javascript** a été créé en 1995 par Netscape (et en particulier par Brendan Eich). Ce langage était 
 destiné à la base pour être côté serveur (Livescript). Ceci n'a jamais vraiment pris et Netscape 
 travailla en parallèle à la version client. 
 
