@@ -22,3 +22,12 @@ Cette documentation est inspirée du livre anglais [You Dont Know JS](https://gi
 Les ressources pour se former au JS depuis la base sont par exemple : 
 - [français : openclassroom](https://openclassrooms.com/fr/courses/2984401-apprenez-a-coder-avec-javascript)
 - [anglais : freecodecamp](https://guide.freecodecamp.org/javascript/)
+
+
+---
+
+source de la formation : 
+
+[Wikipedia](https://fr.wikipedia.org/wiki/JavaScript)  
+[MDN - Documentation Javascript](https://developer.mozilla.org/fr/docs/Web/JavaScript)  
+[You Dont Know JS](https://github.com/getify/You-Dont-Know-JS)
