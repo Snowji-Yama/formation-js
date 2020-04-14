@@ -28,6 +28,6 @@ Les ressources pour se former au JS depuis la base sont par exemple :
 
 source de la formation : 
 
-[Wikipedia](https://fr.wikipedia.org/wiki/JavaScript)  
+[Wikipedia](https://fr.wikipedia.org)  
 [MDN - Documentation Javascript](https://developer.mozilla.org/fr/docs/Web/JavaScript)  
 [You Dont Know JS](https://github.com/getify/You-Dont-Know-JS)
