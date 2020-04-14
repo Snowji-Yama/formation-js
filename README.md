@@ -5,7 +5,10 @@ par Clement D. et Pierre C.
 
 
 1. [L'histoire de Javascript, simplifiée](doc/chapitre1-historique/historique.md)
-2. Le langage et ses concepts
+2. Le langage et ses concepts  
+. [le scope](doc/chapitre2-langage/1-scope.md)  
+. [l'hoisting](doc/chapitre2-langage/2-hoisting.md)  
+. [les closure](doc/chapitre2-langage/3-closure.md)
 3. Les modules
 4. Le tooling pour le JS
 5. La manipulation des structures de données
