@@ -1,43 +1,34 @@
-// J2
-//-- Language
+//-- Langage
 //-- -- Scope
-//-- -- -- Part 1
 
-// bloc 1
-var scopedInGlobal // accessible in global scope
+var scopeAuGlobal // accessible dans le scope global
+
 function testScope () {
-  var scopedInFunction = 'scopedInFunction' // accessible only in this function
-  scopedInGlobal = 'scopedInGlobal'
-  scopedInGlobalImplicit = 'scopedInGlobalImplicit'
+  var scopeDansFonction = 'scopeDansFonction' // accessible seulement dans cette fonction
+  scopeAuGlobal = 'scopeAuGlobal'
+  scopeAuGlobalImplicite = 'scopeAuGlobalImplicite'
 
-  console.log(scopedInFunction) // works
+  console.log(scopeDansFonction) // fonctionne
 
   if (true) {
-    var scopeInBlockCode = 'scopeInBlockCode'
-    let scopeInBlockCodeWithLet = 'scopeInBlockCodeWithLet'
+    var scopeDansBlockCode = 'scopeDansBlockCode'
+    let scopeDansBlockCodeAvecLet = 'scopeDansBlockCodeAvecLet'
   }
-  console.log(scopeInBlockCode) // works cause we use "var" (function scope)
-  console.log(scopeInBlockCodeWithLet) // failed, reference error (block scope)
+  console.log(scopeDansBlockCode) // fonctionne car on utilise "var" (scope de la fonction)
+  // console.log(scopeDansBlockCodeAvecLet) // echoue, reference error (scope du block)
 
   /*
-   Same as previous
+   Comme le cas précédent
   {
-    var scopeInEmptyBlockCode = 'scopeInBlockCode'
-    let scopeInEmptyBlockCodeWithLet = 'scopeInBlockCodeWithLet'
+    var scopeDansBlockCodeVide = 'scopeDansBlockCodeVide'
+    let scopeDansBlockCodeVideAvecLet = 'scopeDansBlockCodeVideAvecLet'
   }
   */
 }
 
-console.log(scopedInGlobal) // works but undefined
-// console.log(scopedInGlobalImplicit) // failed, reference error
+console.log(scopeAuGlobal) // fonctionne mais vaut undefined
+// console.log(scopeAuGlobalImplicite) // echoue, reference error
 testScope()
-console.log(scopedInGlobal) // works
-console.log(scopedInGlobalImplicit) // works
-// console.log(scopedInFunction) // failed, reference error
-
-
-
-
-// console.log(window)
-
-
+console.log(scopeAuGlobal) // fonctionne
+console.log(scopeAuGlobalImplicite) // fonctionne
+// console.log(scopeDansFonction) // echoue, reference error
