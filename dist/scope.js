@@ -5,7 +5,7 @@ var scopeAuGlobal // accessible dans le scope global
 
 function testScope () {
   var scopeDansFonction = 'scopeDansFonction' // accessible seulement dans cette fonction
-  scopeAuGlobal = 'scopeAuGlobal'
+  scopeAuGlobal = 'scopeAuGlobal' //accessible et modifiable
   scopeAuGlobalImplicite = 'scopeAuGlobalImplicite'
 
   console.log(scopeDansFonction) // fonctionne
