@@ -67,4 +67,4 @@ console.log(scopeAuGlobalImplicite) // fonctionne
 
 ---
 
-Pour voir et utiliser le script entier : [rendez vous ici](dist/chapitre2-langage/scope.js)
+Pour voir et utiliser le script entier : [rendez vous ici](/dist/chapitre2-langage/scope.js)
