@@ -42,7 +42,6 @@ function testScope () {
 ```
 
 <br>
-<br>
 
 #### Les variables globales
 
@@ -63,3 +62,9 @@ testScope()
 console.log(scopeAuGlobal) // fonctionne
 console.log(scopeAuGlobalImplicite) // fonctionne
 ```
+
+<br>
+
+---
+
+Pour voir et utiliser le script entier : [rendez vous ici](dist/chapitre2-langage/scope.js)
