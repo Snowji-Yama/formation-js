@@ -13,6 +13,8 @@ function testScope () {
   if (true) {
     var scopeDansBlockCode = 'scopeDansBlockCode'
     let scopeDansBlockCodeAvecLet = 'scopeDansBlockCodeAvecLet'
+    console.log(scopeDansBlockCode) // fonctionne
+    console.log(scopeDansBlockCodeAvecLet) // fonctionne
   }
   console.log(scopeDansBlockCode) // fonctionne car on utilise "var" (scope de la fonction)
   // console.log(scopeDansBlockCodeAvecLet) // echoue, reference error (scope du block)
