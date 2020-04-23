@@ -12,11 +12,15 @@ Javascript devait être un complément à Java dans son utilisation côté web, 
 manipulateur de DOM (et plus) qu'on connait aujourd'hui.  
 Le JS fût ensuite standardisé sous le nom d'**ECMASCRIPT**
 
+<br>
+
 
 ### L'amélioration
 En 2002, un format de données basé sur la structure du Javascript va naitre et pousser le langage 
 vers le haut : le **JSON** (JavaScript Object Notation). Il ne sera donc plus seulement un 
 manipulateur de DOM, mais aussi de données.
+
+<br>
 
 ### L'ascencion
 Suite à la création du JSON, le Javascript gagne du terrain du côté des développeurs. Quelques annnées 
@@ -42,6 +46,8 @@ Ce framework donnera ensuite des idées à d'autres de prendre une part du gatea
 Pour finir, il y a maintenant le terrain du mobile qui est chassé par le Javascript avec des frameworks
 comme **React Native**.
 
+<br>
+<br>
 
 ---
 
