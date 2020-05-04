@@ -1,42 +1,42 @@
-// J2
-//-- Language
-//-- -- Scope
-//-- -- -- Part 2
+//-- Langage
+//-- -- Scope & Hoisting
+
+/*
+ * Rappel
+ *
+ * nb = 2
+ * var nb
+ * console.log(nb) // fonctionne car ?
+ */
 
 // bloc 1
-
-// nb = 2
-// var nb
-// console.log(nb)
-// works
-nbWithLetInGlobal = 4
+nbAvecLetDansGlobal = 4
 
 function test() {
-  nbWithoutVar = 1 // expression
-  nbWithVar = 2
-  nbWithLet = 3
-  var nbWithVar // definition (always definition before expression during compilation)
-  // let nbWithLet // failed, reference error
-  let nbWithLetInGlobal
-  console.log(nbWithLetInGlobal) // works bu undefined, new ref is created
-
+  nbSansVar = 1 // expression
+  nbAvecVar = 2
+  nbAvecLet = 3
+  var nbAvecVar // définition
+  // let nbAvecLet // échoue, reference error
+  let nbAvecLetDansGlobal
+  console.log(nbAvecLetDansGlobal) // fonctionne mais undefined, nouvelle référence créée
 }
 
 test()
-console.log(nbWithoutVar) // works
-// console.log(nbWithVar) // failed, reference error
-// console.log(nbWithLet) // failed, reference error
-console.log(nbWithLetInGlobal) // works
+console.log(nbSansVar) // fonctionne
+// console.log(nbAvecVar) // échoue, reference error
+// console.log(nbAvecLet) // échoue, reference error
+console.log(nbAvecLetDansGlobal) // fonctionne
 
 
 
 
 // bloc 2
-f1() // expression, works (always definition before expression during compilation)
-// f2() // failed, typed error (definition is done so variable f2 exist in memory but equal undefined, so can't be called)
-console.log(f2) // works but undefined
+f1() // expression
+// f2() // échoue, typed error (la définition est fait, f2 existe en mémoire mais vaut undefined, elle ne peut donc pas être appelée)
+console.log(f2) // fonctionne mais vaut undefined
 
-function f1() { // definition
+function f1() { // définition
   console.log('f1')
 }
 
@@ -44,6 +44,6 @@ var f2 = function() {
   console.log('f2')
 }
 
-// f1() // works
-f2() // works
-f3() // failed, reference error
+f1() // fonctionne
+f2() // fonctionne
+// f3() // échoue, reference error

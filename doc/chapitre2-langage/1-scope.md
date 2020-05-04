@@ -104,6 +104,10 @@ qu'après l'appel de la fonction, car avant ça l'exécution ne connait pas l'ex
 Pour conclure, il faut donc bien faire attention à la portée de ses variables afin de ne pas créer 
 de problème de mémoire, performance ou encore d'erreurs en ne maitrisant pas cette portée.
 
+TIPS :
+- ne pas utiliser la déclaration implicite
+
+
 <br>
 <br>
 
