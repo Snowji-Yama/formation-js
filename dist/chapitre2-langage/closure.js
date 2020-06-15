@@ -5,69 +5,53 @@
 
 // bloc 1
 
-function f1() {
-  var nb = 2
-  var nb2 = 4
+function parent() {
+  var nombre1 = 1
+  var nombre2 = 2
 
-  function f2() {
-    console.log(nb)
+  function enfant() {
+    console.log(nombre1)
   }
 
-  f2()
+  return enfant
 }
 
-f1() // works
-// nb2 is lost
-// f2 closure to nb cause it used this var
-// but nb is lost to because all functions are executed, so all references are trashed
+var res = parent()
+// fil d'exécution
+// -> exécution de parent()
+// -> retourne la reference de enfant()
+// -> le garbage collector supprime le scope de parent() (donc nombre2 n'existe plus)
+// -> vu que la reference de enfant() a été retournée et que enfant() a une closure sur nombre1
+// (enfant() référence nombre1)
+// la référence de nombre1 est donc conservé
+res() // le console log s'affiche correctement
 
 
 // bloc 2
 
-function f11() {
-  var nb = 2
-  var nb2 = 4
-
-  function f22() {
-    console.log(nb)
-  }
-
-  return f22
-}
-
-var res = f11()
-// nb still exists in memory
-res()
-
-
-// bloc 3
-
-function f111() {
-  var nb = 222
-  var obj = { nb: 999 }
-  var nb2 = 444
-  var tmp = obj.nb
-
-  function f222() {
-    console.log(nb)
-    console.log(obj.nb)
-    console.log(tmp)
-  }
-
-  return { f: f222, nb, obj }
-}
-
-var res2 = f111()
-console.log(res2.nb) // 222
-console.log(res2.obj.nb)
-res2.nb = 666
-res2.obj.nb = 888
-console.log(res2.nb) // 666
-console.log(res2.obj.nb)
-res2.f() // 222, closure on value of var
-
-
-
-// var test1 = 3
-// var test2 = test1
-// test2 = 4
+// function parent() {
+//   var nombre1 = 1
+//   var obj = { nombreObjet: 3 }
+//   var nombre2 = 2
+//   var tmp = obj.nombreObjet
+//
+//   function enfant() {
+//     console.log(nombre1)
+//     console.log(obj.nombreObjet)
+//     console.log(tmp)
+//   }
+//
+//   return { enfant, nombre1, obj }
+// }
+//
+// var res2 = parent()
+// console.log(res2.nombre1) // 1
+// console.log(res2.obj.nombreObjet) // 3
+// res2.nombre1 = 11
+// res2.obj.nombreObjet = 33
+// console.log(res2.nombre1) // 11
+// console.log(res2.obj.nombreObjet) // 33
+// res2.enfant()
+// 1, closure on value of var
+// 33, closure on objet value of var obj
+// 3, closure value of var tmp (n'a pas de lien de reference avec obj.nb)

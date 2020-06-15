@@ -105,7 +105,19 @@ Pour conclure, il faut donc bien faire attention à la portée de ses variables 
 de problème de mémoire, performance ou encore d'erreurs en ne maitrisant pas cette portée.
 
 TIPS :
+- ne pas utiliser le mot clé "var"
 - ne pas utiliser la déclaration implicite
+- faire attention au **masquage** (c'est à dire nommer une même variable dans 2 scopes différents).
+```js
+const nom = 'Foo'
+
+function afficherNom() {
+  const nom = 'Bar'
+  console.log(nom) // Bar
+}
+
+console.log(nom) // Foo
+```
 
 
 <br>
