@@ -45,13 +45,17 @@ res() // le console log s'affiche correctement
 // }
 //
 // var res2 = parent()
+//
 // console.log(res2.nombre1) // 1
 // console.log(res2.obj.nombreObjet) // 3
+//
 // res2.nombre1 = 11
 // res2.obj.nombreObjet = 33
 // console.log(res2.nombre1) // 11
 // console.log(res2.obj.nombreObjet) // 33
+//
 // res2.enfant()
-// 1, closure on value of var
-// 33, closure on objet value of var obj
-// 3, closure value of var tmp (n'a pas de lien de reference avec obj.nb)
+// résultat des console.log de la fonction enfant()
+// 1, closure sur la valeur de nombre1
+// 33, closure sur la valeur de l'objet 'obj'
+// 3, closure sur la valeur de tmp (n'a pas de lien de reference avec obj.nombreObjet)
