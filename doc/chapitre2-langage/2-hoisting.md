@@ -136,7 +136,9 @@ TIPS :
 
 ---
 
-Pour voir et utiliser le script entier : [rendez vous ici](/dist/chapitre2-langage/hoisting.js)
+Pour voir et utiliser le script entier :  
+[exemple 1](/dist/chapitre2-langage/hoisting/hoisting-exemple-1.js)  
+[exemple 2](/dist/chapitre2-langage/hoisting/hoisting-exemple-2.js)
 
 Source : 
 

@@ -9,7 +9,7 @@ par Clement D. et Pierre C.
 . [le scope](doc/chapitre2-langage/1-scope.md)  
 . [l'hoisting](doc/chapitre2-langage/2-hoisting.md)  
 . [les closures](doc/chapitre2-langage/3-closure.md)
-3. Les modules
+3. [Les modules](doc/chapitre3-modules/modules.md)
 4. Le tooling pour le JS
 5. La manipulation des structures de données
 6. Les design pattern  

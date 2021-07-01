@@ -79,8 +79,9 @@ res2.enfant()
 ---
 
 Pour voir et utiliser le script entier :  
-[rendez vous ici (js classique)](/dist/chapitre2-langage/closure.js)  
-[ainsi qu'ici (fonctionnement jquery)](/dist/chapitre2-langage/closureJquery.js)
+[exemple 1](/dist/chapitre2-langage/closure/closure-exemple-1.js)  
+[exemple 2](/dist/chapitre2-langage/closure/closure-exemple-2.js)  
+[exemple du fonctionnement de JQuery](/dist/chapitre2-langage/closure/closureJquery.js)
 
 
 Source : 
