@@ -9,11 +9,13 @@ par Clement D. et Pierre C.
 . [le scope](chapitre2-langage/1-scope.md)  
 . [l'hoisting](chapitre2-langage/2-hoisting.md)  
 . [les closures](chapitre2-langage/3-closure.md)
-3. [Les modules](chapitre3-modules/modules.md)
-4. Le tooling pour le JS
-5. La manipulation des structures de données
-6. Les design pattern  
-7. VueJS avancé
+3. Les modules  
+. [en JS vanilla](chapitre3-modules/1-vanillaJS.md)  
+. [en NodeJS](chapitre3-modules/2-nodeJS.md)
+5. Le tooling pour le JS
+6. La manipulation des structures de données
+7. Les design pattern  
+8. VueJS avancé
 
 
 ---

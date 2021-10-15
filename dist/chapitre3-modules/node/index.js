@@ -1,15 +1,16 @@
 console.log('script node')
 
+// Module1() // not defined, reference error car pas exporté
+
 require('./module2')
 // const module2 = require('./module2')
 
 console.log('index')
-const module2 = require('./module2')
-
-// module1() // not defined, reference error
+const Module2 = require('./module2')
 
 
-module2.module2()
+
+Module2.Module2()
 
 // /* -------------- comment node gère l'import ----------------- */
 // const ownModule = { exports: {}}
