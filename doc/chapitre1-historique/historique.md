@@ -50,6 +50,10 @@ comme **React Native**.
 <br>
 
 ---
+Suite : [Le scope](../chapitre2-langage/1-scope.md)
+
+---
+<br>
 
 source de la section : 
 

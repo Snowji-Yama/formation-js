@@ -77,6 +77,10 @@ res2.enfant()
 <br>
 
 ---
+Suite : [les Modules en JS Vanilla](../chapitre3-modules/1-vanillaJS.md)
+
+---
+<br>
 
 Pour voir et utiliser le script entier :  
 [exemple 1](/dist/chapitre2-langage/closure/closure-exemple-1.js)  

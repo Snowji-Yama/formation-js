@@ -135,6 +135,10 @@ TIPS :
 <br>
 
 ---
+Suite : [Les closures](../chapitre2-langage/3-closure.md)
+
+---
+<br>
 
 Pour voir et utiliser le script entier :  
 [exemple 1](/dist/chapitre2-langage/hoisting/hoisting-exemple-1.js)  

@@ -163,6 +163,10 @@ pour ne pas se soucier des ordres d'import.
 <br>
 
 ---
+Suite : [Les Modules en NodeJS](../chapitre3-modules/2-nodeJS.md)
+
+---
+<br>
 
 Pour voir et utiliser les scripts entiers :  
 [index.html](/dist/index.html)  

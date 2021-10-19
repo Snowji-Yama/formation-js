@@ -124,5 +124,9 @@ console.log(nom) // Foo
 <br>
 
 ---
+Suite : [L'hoisting](../chapitre2-langage/2-hoisting.md)
+
+---
+<br>
 
 Pour voir et utiliser le script entier : [rendez vous ici](/dist/chapitre2-langage/scope.js)

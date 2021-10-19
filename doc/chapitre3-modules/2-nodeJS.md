@@ -15,6 +15,10 @@ C'est sur ce dernier point cette étape va se concentrer
 <br>
 
 ---
+Suite : COMING SOON
+
+---
+<br>
 
 Pour voir et utiliser les scripts entiers :  
 [example](/dist/chapitre3-modules/node)  
