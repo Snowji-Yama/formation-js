@@ -14,7 +14,7 @@ Il va donc y avoir 2 types de variables : **globales** et **locales**.
 
 #### Les variables locales
 
-Une variable sera dite locale car elle ne sera accessible seulement dans la fonction ou dans le 
+Une variable sera dite locale car elle sera accessible seulement dans la fonction ou dans le 
 code bloc (caractère "{}") dans lequel elle sera déclarée.  
 Voici un exemple pour illustrer les propos :
 
@@ -33,12 +33,12 @@ où elle a été déclarée. Si l'on essaye d'avoir accès à cette variable en 
 
 <br>
 
-Pour aller un peu plus loin, il faut se tourner sur le mot clé utilisé pour déclarer une variable. 
-Dans l'exemple ci-dessus, le mot clé utilisé a été `var`. Il possède une particularité, il scope 
+Pour aller un peu plus loin, il faut se tourner sur le mot-clé utilisé pour déclarer une variable. 
+Dans l'exemple ci-dessus, le mot-clé utilisé a été `var`. Il possède une particularité, il scope 
 la variable à la fonction automatiquement, ignorant donc tout autre code block.  
 Depuis ES6 (EmcaScript 2015), var est délaissé (fort conseil de ne plus l'utiliser) 
-pour laisser la place au **let** et **const**. La portée de ces deux mots clé quand à eux est bien 
-définie par les code block.
+pour laisser la place au **let** et **const**. La portée de ces deux mots-clé quand à eux est bien 
+définie par les codes block.
 
 En voici l'illustration : 
 
@@ -93,9 +93,9 @@ console.log(scopeAuGlobalImplicite) // fonctionne
 
 Dans ce cas, on voit bien que `scopeAuGlobal` est accessible tout le temps dans notre script. 
 Elle vaut __undefined__ avant l'appel de la fonction car aucune valeur ne lui a été affectée au départ, 
-mais une fois la fonction appelé, elle possède bien sa valeur.  
-Pour ce qui est de `scopeAuGlobalImplicite`, ayant été déclarée sans mot clé, elle ne sera accessible 
-qu'après l'appel de la fonction, car avant ça l'exécution ne connait pas l'existance de cette variable 
+mais une fois la fonction appelée, elle possède bien sa valeur.  
+Pour ce qui est de `scopeAuGlobalImplicite`, ayant été déclarée sans mot-clé, elle ne sera accessible 
+qu'après l'appel de la fonction, car avant ça l'exécution ne connait pas l'existence de cette variable 
 (et génère donc une Reference Error). C'est ce qu'on appelle une **déclaration implicite**. 
 
 <br>
@@ -105,7 +105,7 @@ Pour conclure, il faut donc bien faire attention à la portée de ses variables 
 de problème de mémoire, performance ou encore d'erreurs en ne maitrisant pas cette portée.
 
 TIPS :
-- ne pas utiliser le mot clé "var"
+- ne pas utiliser le mot-clé "var"
 - ne pas utiliser la déclaration implicite
 - faire attention au **masquage** (c'est à dire nommer une même variable dans 2 scopes différents).
 ```js

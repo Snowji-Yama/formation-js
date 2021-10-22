@@ -30,7 +30,7 @@ Pour montrer la closure présente ici, voici le fil d'exécution de ce code :
 2. parent() retourne la référence de ``enfant()``
 3. le garbade collector supprime le scope de parent(), nombre2 n'existe donc plus
 
-Dans cette exemple, on dit que **enfant() a une closure sur nombre1**. Pour le vérifier, 
+Dans cet exemple, on dit que **enfant() a une closure sur nombre1**. Pour le vérifier, 
 quand on exécute ``res()`` qui est en réalité une référence de enfant(), nombre1 s'affichera 
 correctement car sa référence aura été conservée grâce à la closure.
 
@@ -38,7 +38,7 @@ correctement car sa référence aura été conservée grâce à la closure.
 #### Pour aller un peu plus loin
 
 Pour pousser un peu plus le sujet des closures, le prochain exemple possède la même structure mais 
-manipule des données plus complexe pour jouer avec les références.
+manipule des données plus complexes pour jouer avec les références.
 
 ```js
 function parent() {

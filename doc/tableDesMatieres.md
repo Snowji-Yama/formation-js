@@ -1,26 +1,26 @@
 # Formation JS
 
-par Clement D. et Pierre C.
+par Clément D. et Pierre C.
 
 
 
 1. [L'histoire de Javascript, simplifiée](chapitre1-historique/historique.md)
 2. Le langage et ses concepts  
 . [le scope](chapitre2-langage/1-scope.md)  
-. [l'hoisting](chapitre2-langage/2-hoisting.md)  
+. [le hoisting](chapitre2-langage/2-hoisting.md)  
 . [les closures](chapitre2-langage/3-closure.md)
 3. Les modules  
 . [en JS vanilla](chapitre3-modules/1-vanillaJS.md)  
 . [en NodeJS](chapitre3-modules/2-nodeJS.md)
 5. Le tooling pour le JS
 6. La manipulation des structures de données
-7. Les design pattern  
+7. Les designs pattern  
 8. VueJS avancé
 
 
 ---
 
-Cette documentation a pout but de consolider des connaissances en Javascript. En aucun cas
+Cette documentation a pour but de consolider des connaissances en Javascript. En aucun cas
 elle permettra de partir de zéro et d'appréhender le langage (instructions basiques et autres).
 Cette documentation est inspirée du livre anglais [You Dont Know JS](https://github.com/getify/You-Dont-Know-JS/tree/1st-ed)
 
