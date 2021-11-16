@@ -25,51 +25,123 @@ Module1() // reference error
 
 Le fait que Node gère cette séparation seul aide grandement donc la gestion du code et des conflits 
 potentiels. Reste encore le point de la communication entre ces fichiers. C'est là qu'entrent en jeu les mots-
-clé `require` et `exports`.  
-Si l'exemple précédent n'a pas fonctionné, c'est parce que notre `Module1` n'a pas été exporté (c-a-d ajouté 
-au scope de Node) puis qu'il n'a pas été require (c-a-d explicitement ajouté au scope de l'index.js).
+clé **require** et **exports**.  
+Si l'exemple précédent n'a pas fonctionné, c'est parce que notre fonction `Module1` n'a pas été exportée 
+(c-a-d ajouté au scope de Node) puis qu'elle n'a pas été "require" (c-a-d explicitement ajouté 
+au scope de l'index.js).
 
 Voici l'illustration d'un simple module et de son utilisation :
 
 ```js
 // fichier module-2.js
-function Module2 () {
-  console.log('Module2')
+function fonctionDeModule2 () {
+  console.log('fonctionDeModule2')
 }
 
 // type d'export 1
 // module.exports = {
-//   Module2
+//   fonctionDeModule2
 // }
 
 // type d'export 2
-exports.Module2 = Module2
+exports.fonctionDeModule2 = fonctionDeModule2
 ```
 ```js
 // index.js
 const Module2 = require('./module-2')
-Module2.Module2()
+Module2.fonctionDeModule2()
 ```
 
-Décrire l'exportation avec 2 méthodes
-Expliquer ensuite l'importation pour l'utilisation
+<br>
 
-Expliquer la différence entre les 2 méthodes et pourquoi utiliser l'une
+L'idée ici est de concidérer nos fichiers comme des modules. Le fichier `module-2` va donc pouvoir posséder 
+autant de fonctions que nécessaire pour ensuite rendre accessible celles ayant pour but d'être utilisées à 
+l'extérieur de ce module. C'est là que rentre en jeu les mots clé **module.exports** ou **exports**.
+
+Pour pouvoir exporter une fonction, un objet ou autre de notre module, il existe 2 syntaxes :
+- la définition peut s'ajouter à l'objet **module.exports**
+```js
+module.exports = {
+  nomDeLaCle: maFonction,
+  nomDeLaCle2: monObjet
+}
+```
+- La définition peut s'ajouter directement à **exports** comme ci dessus
+```js
+exports.nomDeLaCle = maFonction
+exports.nomDeLaCle2 = monObjet
+```
+
+<br>
+
+Ensuite pour utiliser un module et ses fonctions dans un autre fichier NodeJS, il suffit d'importer ce 
+dernier comme dans l'illustration précédente avec le mot réservé **require** qui prend en paramètre le 
+fichier correspondant :
+```js
+const Module = require('./module')
+Module.maFonction()
+```
 
 
-(38min)
+### La différence entre les 2 types d'export
+
+
+Pour comprendre la nuance entre les 2, il faut savoir comme marche l'engine de node. Si on a accès à des
+variables comme "module, exports, require", qu'on pourrait appeler magique c'est en réalité parce node 
+les met à disposition et voici comment.
+
+NodeJS wrap notre code dans une FE (Functional Expression), et dans cette fonction il y a en paramètre les 
+fonctions et objets qui nous interessent, c'est pour cela qu'on y a accès en tout transparence. Ces paramètres
+sont bien évidemment instanciés et mis à jour en amont pour le noyau de nodeJS et tenus à jour.
+
+Voici ce à quoi pourrait ressembler la mécanique de node sur l'exécution d'un des modules :
+CODE
+
+```js
+const ownModule = { exports: {}}
+const __ownFilname = 'index.js'
+const __ownDirname = 'node'
+const ownRequire = () => {}
+
+;(function(exports, require, module, __filename, __dirname){
+  // code ...
+})(ownModule.exports, ownRequire, ownModule, __ownFilname, __ownDirname)
+```
+
+On observe que l'on passe en paramètre la référence de `ownModule` pour la variable **module**, ainsi
+la référence de la clé `exports` de ownModule pour **exports**. C'est là le "hic", et voici pourquoi 
+avec cet exemple :
+
+```js
+exports.var1 = 'var1' // n'existera pas
+module.exports = {
+  var2: 'var2'
+}
+module.exports.var3 = 'var3' // ok
+```
+
+Avec cette exemple, on peut voir que si les 2 méthodes sont utilisés dans un même fichier, cela peut 
+créer des problèmes car ici, `var1` ne serait en réalité pas exporté étant donné que la référence 
+de **exports** est écrasée par l'instruction suivante. 
+
+Il vaut donc mieux toujours utiliser la même méthode tout le temps dans les fichiers. Et pour ce qui
+du choix, il peut être préférable d'utiliser **module.exports** afin de maitriser entièrement 
+notre objet module de base et de le visualiser plus facilement (et non pas passer par la référence
+d'une clé, ce qui donne un aspect plus "magique" à la manipulation), d'autant 
+qu'il aura la priorité. Mais ça reste une histoire de préférence.
+
+TIPS : un fichier ne sera parsé qu'une seul fois par Node. Si vous "require" un même module dans plusieurs
+fichier (voire dans le même fichier par erreur), la lecture de celui-ci ne sera effectué qu'une seule 
+fois et Node gardera en mémoire l'export.
 
 <br>
 <br>
-
----
-Suite : COMING SOON
 
 ---
 <br>
 
 Pour voir et utiliser les scripts entiers :  
-[example](/dist/chapitre3-modules/node)  
+[examples](/dist/chapitre3-modules/node)  
 
 Source :
 

@@ -1,5 +1,5 @@
 function f1(params) {
-  document.querySelector('#closure').addEventListener('click', function () {
+  document.querySelector('#formation').addEventListener('click', function () {
     console.log('click param : ', params)
   })
 }

@@ -1,13 +1,13 @@
 console.log('init Module 2')
 
-function Module2 () {
-  console.log('Module2')
+function fonctionDeModule2 () {
+  console.log('fonctionDeModule2')
 }
 
 // type d'export 1
 // module.exports = {
-//   Module2
+//   fonctionDeModule2
 // }
 
 // type d'export 2
-exports.Module2 = Module2
+exports.fonctionDeModule2 = fonctionDeModule2
