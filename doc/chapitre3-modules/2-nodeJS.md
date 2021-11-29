@@ -23,11 +23,11 @@ function Module1() {
 Module1() // reference error
 ```
 
-Le fait que Node gère cette séparation seul aide grandement donc la gestion du code et des conflits 
+Le fait que Node gère cette séparation seul aide grandement la gestion du code et des conflits
 potentiels. Reste encore le point de la communication entre ces fichiers. C'est là qu'entrent en jeu les mots-
 clé **require** et **exports**.  
 Si l'exemple précédent n'a pas fonctionné, c'est parce que notre fonction `Module1` n'a pas été exportée 
-(c-a-d ajouté au scope de Node) puis qu'elle n'a pas été "require" (c-a-d explicitement ajouté 
+(c-à-d ajoutée au scope de Node) puis qu'elle n'a pas été "require" (c-à-d explicitement ajoutée
 au scope de l'index.js).
 
 Voici l'illustration d'un simple module et de son utilisation :
@@ -54,9 +54,9 @@ Module2.fonctionDeModule2()
 
 <br>
 
-L'idée ici est de concidérer nos fichiers comme des modules. Le fichier `module-2` va donc pouvoir posséder 
+L'idée ici est de considérer nos fichiers comme des modules. Le fichier `module-2` va donc pouvoir posséder 
 autant de fonctions que nécessaire pour ensuite rendre accessible celles ayant pour but d'être utilisées à 
-l'extérieur de ce module. C'est là que rentre en jeu les mots clé **module.exports** ou **exports**.
+l'extérieur de ce module. C'est là qu'entrent en jeu les mots-clé **module.exports** ou **exports**.
 
 Pour pouvoir exporter une fonction, un objet ou autre de notre module, il existe 2 syntaxes :
 - la définition peut s'ajouter à l'objet **module.exports**
@@ -86,16 +86,15 @@ Module.maFonction()
 ### La différence entre les 2 types d'export
 
 
-Pour comprendre la nuance entre les 2, il faut savoir comme marche l'engine de node. Si on a accès à des
-variables comme "module, exports, require", qu'on pourrait appeler magique c'est en réalité parce node 
-les met à disposition et voici comment.
+Pour comprendre la nuance entre les 2, il faut savoir comment marche l'engine de node. Si on a accès à des
+variables comme "module, exports, require", qu'on pourrait appeler magique c'est en réalité parce que node 
+les met à disposition et voici comment :
 
-NodeJS wrap notre code dans une FE (Functional Expression), et dans cette fonction il y a en paramètre les 
-fonctions et objets qui nous interessent, c'est pour cela qu'on y a accès en tout transparence. Ces paramètres
+NodeJS wrap notre code dans une FE (Functional Expression), et dans cette fonction il y a en paramètres les
+fonctions et objets qui nous intéressent, c'est pour cela qu'on y a accès en toute transparence. Ces paramètres
 sont bien évidemment instanciés et mis à jour en amont pour le noyau de nodeJS et tenus à jour.
 
 Voici ce à quoi pourrait ressembler la mécanique de node sur l'exécution d'un des modules :
-CODE
 
 ```js
 const ownModule = { exports: {}}
@@ -109,8 +108,8 @@ const ownRequire = () => {}
 ```
 
 On observe que l'on passe en paramètre la référence de `ownModule` pour la variable **module**, ainsi
-la référence de la clé `exports` de ownModule pour **exports**. C'est là le "hic", et voici pourquoi 
-avec cet exemple :
+la référence de la clé `exports` de ownModule pour **exports**. Là est le hic, en voici la raison avec 
+cet exemple :
 
 ```js
 exports.var1 = 'var1' // n'existera pas
@@ -120,18 +119,18 @@ module.exports = {
 module.exports.var3 = 'var3' // ok
 ```
 
-Avec cette exemple, on peut voir que si les 2 méthodes sont utilisés dans un même fichier, cela peut 
+Avec cet exemple, on peut voir que si les 2 méthodes sont utilisées dans un même fichier, cela peut
 créer des problèmes car ici, `var1` ne serait en réalité pas exporté étant donné que la référence 
 de **exports** est écrasée par l'instruction suivante. 
 
 Il vaut donc mieux toujours utiliser la même méthode tout le temps dans les fichiers. Et pour ce qui
-du choix, il peut être préférable d'utiliser **module.exports** afin de maitriser entièrement 
+du choix, il peut être préférable d'utiliser **module.exports** afin de maîtriser entièrement
 notre objet module de base et de le visualiser plus facilement (et non pas passer par la référence
-d'une clé, ce qui donne un aspect plus "magique" à la manipulation), d'autant 
-qu'il aura la priorité. Mais ça reste une histoire de préférence.
+d'une clé, ce qui donne un aspect plus "magique" à la manipulation), d'autant
+qu'il aura la priorité. Cela reste toutefois une histoire de préférence.
 
 TIPS : un fichier ne sera parsé qu'une seul fois par Node. Si vous "require" un même module dans plusieurs
-fichier (voire dans le même fichier par erreur), la lecture de celui-ci ne sera effectué qu'une seule 
+fichiers (voire dans le même fichier par erreur), la lecture de celui-ci ne sera effectuée qu'une seule
 fois et Node gardera en mémoire l'export.
 
 <br>
